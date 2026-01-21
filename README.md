@@ -9,15 +9,22 @@ Live power monitor for Apple Silicon Macs. Displays real-time CPU, GPU, and ANE 
 - macOS with Apple Silicon
 - `sudo` access (required by `powermetrics`)
 
-## Build
+## Install
 
 ```
-make
+curl -L https://github.com/ehrlich-b/powermon/releases/latest/download/powermon -o /usr/local/bin/powermon && chmod +x /usr/local/bin/powermon
 ```
 
 ## Run
 
 ```
+sudo powermon
+```
+
+## Build from source
+
+```
+make
 sudo ./bin/powermon
 ```
 
