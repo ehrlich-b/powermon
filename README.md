@@ -2,6 +2,8 @@
 
 Live power monitor for Apple Silicon Macs. Displays real-time CPU, GPU, and ANE power usage alongside battery and charger stats.
 
+![screenshot](screenshot.svg)
+
 ## Requirements
 
 - macOS with Apple Silicon

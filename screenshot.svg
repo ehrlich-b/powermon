@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="520" viewBox="0 0 540 520">
+  <rect width="540" height="520" fill="#1e1e1e" rx="8"/>
+  <text font-family="Monaco, 'Courier New', monospace" font-size="13" fill="#d4d4d4">
+    <tspan x="20" y="30">╔══════════════════════════════════════════════════════╗</tspan>
+    <tspan x="20" y="50">║        LIVE POWER MONITOR  (Ctrl+C to stop)          ║</tspan>
+    <tspan x="20" y="70">╠══════════════════════════════════════════════════════╣</tspan>
+    <tspan x="20" y="90">║ <tspan fill="#d670d6">SILICON</tspan> (live)                                       ║</tspan>
+    <tspan x="20" y="110">║   CPU:   0.89 W  [<tspan fill="#d670d6">█</tspan><tspan fill="#666">░░░░░░░░░░░░░░░░░░░</tspan>]              ║</tspan>
+    <tspan x="20" y="130">║   GPU:   0.11 W  [<tspan fill="#666">░░░░░░░░░░░░░░░░░░░░</tspan>]              ║</tspan>
+    <tspan x="20" y="150">║   ANE:   0.42 W  [<tspan fill="#666">░░░░░░░░░░░░░░░░░░░░</tspan>]              ║</tspan>
+    <tspan x="20" y="170">║   Chip:  1.42 W                                      ║</tspan>
+    <tspan x="20" y="190">╠══════════════════════════════════════════════════════╣</tspan>
+    <tspan x="20" y="210">║ <tspan fill="#6a9955">CHARGER</tspan>                                              ║</tspan>
+    <tspan x="20" y="230">║   20.0V × 4.35A = <tspan fill="#6a9955">87W</tspan>                                ║</tspan>
+    <tspan x="20" y="250">╠══════════════════════════════════════════════════════╣</tspan>
+    <tspan x="20" y="270">║ POWER SPLIT (~30s refresh)                           ║</tspan>
+    <tspan x="20" y="290">║   → <tspan fill="#4fc1ff">System:   34.0 W</tspan>                                 ║</tspan>
+    <tspan x="20" y="310">║   → <tspan fill="#dcdcaa">Battery:  53.0 W</tspan>                                 ║</tspan>
+    <tspan x="20" y="330">║   [<tspan fill="#4fc1ff">████████████████</tspan><tspan fill="#dcdcaa">████████████████████████</tspan>]         ║</tspan>
+    <tspan x="20" y="350">║    <tspan fill="#4fc1ff">system 40%</tspan>          <tspan fill="#dcdcaa">battery 60%</tspan>                   ║</tspan>
+    <tspan x="20" y="370">╠══════════════════════════════════════════════════════╣</tspan>
+    <tspan x="20" y="390">║ <tspan fill="#dcdcaa">BATTERY</tspan>                                              ║</tspan>
+    <tspan x="20" y="410">║   70% │ 12.75V │ 4161mA │ 29.6°C                     ║</tspan>
+    <tspan x="20" y="430">║   <tspan fill="#6a9955">charging</tspan>                                           ║</tspan>
+    <tspan x="20" y="450">║   [<tspan fill="#dcdcaa">██████████████████████████████</tspan><tspan fill="#666">░░░░░░░░░░░░░░</tspan>]     ║</tspan>
+    <tspan x="20" y="470">╠══════════════════════════════════════════════════════╣</tspan>
+    <tspan x="20" y="490">║ 19:02:08                                             ║</tspan>
+    <tspan x="20" y="510">╚══════════════════════════════════════════════════════╝</tspan>
+  </text>
+</svg>
