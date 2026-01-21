@@ -49,21 +49,6 @@ const (
 	Dim     = "\033[2m"
 )
 
-func bar(pct int, width int) string {
-	if pct < 0 {
-		pct = 0
-	}
-	if pct > 100 {
-		pct = 100
-	}
-	filled := pct * width / 100
-	empty := width - filled
-	if empty < 0 {
-		empty = 0
-	}
-	return strings.Repeat("█", filled) + Dim + strings.Repeat("░", empty) + Reset
-}
-
 func colorBar(pct int, width int, color string) string {
 	if pct < 0 {
 		pct = 0
@@ -97,11 +82,10 @@ func splitBar(sysPct, batPct, width int) string {
 	return Cyan + strings.Repeat("█", sysBars) + Reset + Yellow + strings.Repeat("█", batBars) + Reset
 }
 
-// stripAnsi returns visible length (without ANSI codes)
+var ansiRe = regexp.MustCompile(`\x1b\[[0-9;]*m`)
+
 func visibleLen(s string) int {
-	ansiRe := regexp.MustCompile(`\x1b\[[0-9;]*m`)
-	clean := ansiRe.ReplaceAllString(s, "")
-	return len([]rune(clean))
+	return len([]rune(ansiRe.ReplaceAllString(s, "")))
 }
 
 func line(content string) string {
@@ -174,14 +158,6 @@ func pollIoreg() {
 }
 
 func main() {
-	sig := make(chan os.Signal, 1)
-	signal.Notify(sig, os.Interrupt)
-	go func() {
-		<-sig
-		fmt.Print("\033[?25h\n")
-		os.Exit(0)
-	}()
-
 	fmt.Print("\033[?25l")     // hide cursor
 	fmt.Print("\033[H\033[2J") // clear
 
@@ -204,6 +180,16 @@ func main() {
 		fmt.Println("Error starting powermetrics (need sudo):", err)
 		return
 	}
+
+	// Handle Ctrl+C: kill powermetrics and restore cursor
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, os.Interrupt)
+	go func() {
+		<-sig
+		cmd.Process.Kill()
+		fmt.Print("\033[?25h\n")
+		os.Exit(0)
+	}()
 
 	defer cmd.Process.Kill()
 
